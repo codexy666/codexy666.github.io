@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Appium环境搭建及使用Appium-Server-GUI实现自动化-新 | Hexo</title>
+  <title>Appium环境搭建及使用Appium-Server-GUI实现自动化 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Appium是什么？ Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，它是一个用Node.js编写的HTTP server，应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。">
+  <meta name="description" content="略">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Appium环境搭建及使用Appium-Server-GUI实现自动化-新">
+<meta property="og:title" content="Appium环境搭建及使用Appium-Server-GUI实现自动化">
 <meta property="og:url" content="http://example.com/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一、Appium是什么？ Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，它是一个用Node.js编写的HTTP server，应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。">
+<meta property="og:description" content="略">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h6585h2ldkj21qg0oswgb.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657bfiiytj20po04uaad.jpg">
@@ -35,8 +35,25 @@
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657kmypg9j219g0qyjtm.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ky12isj21ca0u0gq1.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657lgy7tuj21bk0jy7av.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657m2vt8kj20vg0u075r.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657nwjenoj21980ecq4l.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ofw0zmj215804swff.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657opgoctj20yq0js768.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qcvtqrj20ud0f1gn3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qxmt8cj207101tglf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rgoh7mj203w01owe9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rxmkpmj207f023web.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657shjh5pj20x40fh0v8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657st2trcj209802vdfq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h657teuwvvj209e03fwee.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657tu3ztdj20x80kp76n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657u75lvfj20z40fvq55.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657ufg20rj20e505fjrd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657uq4r1vj20vq0gln00.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657v9x0wqj20za0jytcd.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/e6c9d24ely1h657w4rsutj20pa07vdgc.jpg">
 <meta property="article:published_time" content="2022-09-17T06:10:34.380Z">
-<meta property="article:modified_time" content="2022-09-17T09:17:18.134Z">
+<meta property="article:modified_time" content="2022-09-17T08:18:26.430Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/e6c9d24egy1h6585h2ldkj21qg0oswgb.jpg">
@@ -182,7 +199,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Appium环境搭建及使用Appium-Server-GUI实现自动化-新
+      Appium环境搭建及使用Appium-Server-GUI实现自动化
     </h1>
   
 
@@ -271,7 +288,48 @@
 <p>提示JAVA_HOME environment variable is NOT set!</p>
 <p>解决方法：大概率还是环境变量配置出错或者未生效，按上述步骤正确配置下jdk的环境变量就好了</p>
 <p>五、使用Appium-Server-GUI实现自动化</p>
-<p>略</p>
+<p>打开Appium-Server-GUI，直接点击startServer</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657m2vt8kj20vg0u075r.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657nwjenoj21980ecq4l.jpg"></p>
+<p>点击图示符号，启动Appium的Inspector探测工具（由于我们上面安装的 appium 版本是 1.22.3 ，所以Appium Inspector需要另外安装，下载并安装Appium-inspector：<a target="_blank" rel="noopener" href="https://github.com/appium/appium-inspector/releases">https://github.com/appium/appium-inspector/releases</a>)</p>
+<p>连接真机（也可以使用模拟器）</p>
+<p>用 USB 先连接到电脑，一头连接手机，一头连接电脑<br>进入手机设置 –&gt; 更多设置 –&gt; 开发者选项<br>开启USB 调试<br>在终端输入 adb devices -l   查询结果如下则代表连接成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ofw0zmj215804swff.jpg"></p>
+<p>配置appium-inspector并启动</p>
+<p>填写和Appium Server一致的 Remote Host,  Remote Port  </p>
+<p>同时因为 appium为1.22.x，appium-inspector为新版，需要在 appium-inspector 中的 Remote Path 中配置&#x2F;wd&#x2F;hub</p>
+<p>platformName：设备名称，一般为 “Android” 或者 “ios”<br>platformVersion：版本号，可以通过命令：adb shell getprop ro.build.version.release 获取<br>deviceName：如果是真机的话填写的是设备名称；用的是模拟器的话，填写的是IP端口号。可通过命令：adb devices -l 查看，model:后面跟的那个值就是 “deviceName” 要填写的名称<br>appPackge 与 appActivity为必填项，获取方式为：启动了app后通过命令 adb shell dumpsys activity | grep “mResume” 查看，以”&#x2F;“为界限，左边是appPackge，右边是appActivity</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657opgoctj20yq0js768.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qcvtqrj20ud0f1gn3.jpg"></p>
+<p>操作按钮简介</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qxmt8cj207101tglf.jpg"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rgoh7mj203w01owe9.jpg"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rxmkpmj207f023web.jpg"></p>
+<p>依次为：<br>选择元素按钮，点击就可以选中监控页面上的需要操作的位置</p>
+<p>滑动坐标按钮，可以使用这个按钮来进行页面滑动操作</p>
+<p>点击坐标点按钮，点击就可以在监控页面中进行点击操作，还可以看到鼠标当前的位置坐标</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657shjh5pj20x40fh0v8.jpg"></p>
+<p>返回和刷新功能：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657st2trcj209802vdfq.jpg"></p>
+<p>脚本录制（重点）</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657teuwvvj209e03fwee.jpg"></p>
+<p>例：在Appium inspector中完成配置后，点击启动会话，进入如下界面，点击小眼睛开启录制：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657tu3ztdj20x80kp76n.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657u75lvfj20z40fvq55.jpg"></p>
+<p>点击1、2选择好操作位置后，点击位置3表示在选中的“请输入手机&#x2F;笔名”处做点击操作，再点击位置4即可输入手机号或者笔名</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657ufg20rj20e505fjrd.jpg"></p>
+<p>输入完点击send keys即可，同理输入密码、同意协议</p>
+<p>最后再选中登录按钮，点击“点击”按钮就完成了一次登录</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657uq4r1vj20vq0gln00.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657v9x0wqj20za0jytcd.jpg"></p>
+<p>图示完成了一次简单的录制，最后可以从Recorder中选择自己想要的语言（图示选择python），同时如果想要展示全部的代码，我们可以点击右侧的“显示&#x2F;隐藏样版代码”：<br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657w4rsutj20pa07vdgc.jpg"></p>
+<p>录制的代码，可以保存成xxx.py文件，按需求适当调整后就可以执行了。</p>
+<p>如下为在APP端首页启动七猫作家助手app，切换账号密码登录方式并输入账号、密码完成登录的自动化代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"># This sample code uses the Appium python client v2</span><br><span class="line"># pip install Appium-Python-Client</span><br><span class="line"># Then you can paste this into a file and simply run with Python</span><br><span class="line"></span><br><span class="line">from appium import webdriver</span><br><span class="line">from appium.webdriver.common.appiumby import AppiumBy</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># For W3C actions</span><br><span class="line">from selenium.webdriver.common.action_chains import ActionChains</span><br><span class="line">from selenium.webdriver.common.actions import interaction</span><br><span class="line">from selenium.webdriver.common.actions.action_builder import ActionBuilder</span><br><span class="line">from selenium.webdriver.common.actions.pointer_input import PointerInput</span><br><span class="line"></span><br><span class="line">caps = &#123;&#125;</span><br><span class="line">caps[&quot;platformName&quot;] = &quot;Android&quot;</span><br><span class="line">caps[&quot;appium:platformVersion&quot;] = &quot;8.1.0&quot;</span><br><span class="line">caps[&quot;appium:deviceName&quot;] = &quot;OPPO_R11s&quot;</span><br><span class="line">caps[&quot;appium:appPackge&quot;] = &quot;com.qimao.writerassistant&quot;</span><br><span class="line">caps[&quot;appium:appActivity&quot;] = &quot;.MainActivity&quot;</span><br><span class="line">caps[&quot;appium:ensureWebviewsHavePages&quot;] = True</span><br><span class="line">caps[&quot;appium:nativeWebScreenshot&quot;] = True</span><br><span class="line">caps[&quot;appium:newCommandTimeout&quot;] = 3600</span><br><span class="line">caps[&quot;appium:connectHardwareKeyboard&quot;] = True</span><br><span class="line"></span><br><span class="line">driver = webdriver.Remote(&quot;http://0.0.0.0:4723/wd/hub&quot;, caps)</span><br><span class="line"></span><br><span class="line">el1 = driver.find_element(by=AppiumBy.XPATH, value=&quot;/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[20]&quot;)</span><br><span class="line">el1.click()</span><br><span class="line">time.sleep(10)</span><br><span class="line">el2 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=&quot;帐号密码登录&quot;)</span><br><span class="line">el2.click()</span><br><span class="line">el3 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.EditText[1]&quot;)</span><br><span class="line">el3.click()</span><br><span class="line">el3.send_keys(&quot;18251977135&quot;)</span><br><span class="line">el4 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.EditText[2]&quot;)</span><br><span class="line">el4.click()</span><br><span class="line">el4.send_keys(&quot;yjm112233&quot;)</span><br><span class="line">el5 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.ImageView[3]&quot;)</span><br><span class="line">el5.click()</span><br><span class="line">el6 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=&quot;登录&quot;)</span><br><span class="line">el6.click()</span><br><span class="line"></span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>遇到的问题及解决方式</p>
+<p>输入密码时提示：Could not obtain screenshot: unable to capture screen: Failed to capture a s</p>
+<p>解决方式：这是由于手机在输入密码时启用了安全键盘，此时app页面被禁止截屏导致的。在手机 “设置 - 键盘与输入法 - 输入密码时启动安全键盘” 处关闭按钮即可。</p>
+<p>执行自动化脚本时提示：An element could not be located on the page using the given search parameter</p>
+<p>解决方式：报错信息提示“使用给定的搜索参数无法在页面上找到元素”，这是由于实际app启动是需要一定的时间的，而代码在el1.click()执行之后立即执行driver.find_element，导致无法在页面找到元素，在el1.click()后加上time.sleep(10)即可解决（睡眠秒数可按实际情况调整）。</p>
 <p>总结</p>
 <p>本文主要分享了Appium环境的搭建以及使用界面元素查看工具Appium Inspector来定位元素，模拟我们在手机上定位、点击、输入、滑动等各种操作，并将每一步操作记录下来集合成代码，以便我们将其取出并复用，实现部分功能的自动化测试。Appium还有许多进阶的用法，欢迎感兴趣的小伙伴共同探讨，谢谢~</p>
 
