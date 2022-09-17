@@ -152,6 +152,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Appium-Server-GUI实现自动化测试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>                                Appium环境搭建及使用Appium-Server-GUI实现自动化
+</code></pre>
+<p>一、Appium是什么？</p>
+<p>Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，它是一个用Node.js编写的HTTP server，应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。</p>
+<p>二、Appium的特点</p>
+<p>1、支持多平台运行测试对象App（iOS、Android等）</p>
+<p>2、支持多种程序语言开发测试程序（基本上 Selenium 支持开发的语言appium都支持，如：pyhton、java、Ruby、js、php、C# 等）</p>
+<p>3、支持测试程序运行在多种平台上（包括：Windows、Linux、MacOS等）</p>
+<p>三、Appium的自动化原理</p>
+<p>Appium的自动化架构图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6585h2ldkj21qg0oswgb.jpg"></p>
+<p>!(&#x2F;Users&#x2F;admin&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220906175822151.png)</p>
+<p>图中Test script是测试程序，是测试逻辑的实现部分。Appium Server是一个 JavaScript 代码实现的程序，它是运行在 Node.js 里面的。被测试 app则运行在真实设备或者模拟器中。</p>
+<p>这个测试系统运行起来交互关系为：测试程序（Test scrip）告诉 Appium Server 要做什么操作。比如要去点击界面的一个元素（这步通过 http 请求发送命令给 Appium Server ），Appium Server 接收到测试程序的命令后，再发出命令给设备上运行的控制程序（这程序由Appium Server注入到设备里面运行），控制程序调用相应自动化库里面的方法去执行界面的控制。</p>
+<p>四、Appium环境搭建</p>
+<p>基本步骤:<br>1、安装Node.js<br>2、安装JDK，及配置环境变量<br>3、安装SDK，及配置环境变量<br>4、安装Xcode<br>5、安装Appium桌面程序</p>
+<p>安装Node.js</p>
+<p>直接官网下载<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
+<p>下载安装包安装，安装完成后,在终端中输入<strong>node -v</strong>,显示版本号则表示安装成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657bfiiytj20po04uaad.jpg"></p>
+<p>注：node也可以直接通过brew命令安装，过程中可能会缺少很多依赖包，将缺少的依赖包全部安装好就可顺利安装node了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657c53n2ej21oa0fo7ae.jpg"></p>
+<p>安装JDK，及配置环境变量</p>
+<p>直接官网下载<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">https://www.oracle.com/java/technologies/downloads/#java8</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657dq26etj21m60u00xr.jpg"></p>
+<p>这步点击下载时，会跳转到Oracle登录界面，若此前注册过账号就直接登录，未注册过则创建账户后再登录，就可以下载啦</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657e4xlgjj21gt0u0gpt.jpg"></p>
+<p>安装下载好的jdk，还需要进行环境变量配置</p>
+<p>Java安装在：</p>
+<p>&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines 这个目录下面（如果没有，可以通过cp 命令将jdk包复制到&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines目录）</p>
+<p>Java的主目录在：<br>&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_341.jdk&#x2F;Contents&#x2F;Home<br>我们需要配置Java的环境变量也是这个目录</p>
+<p>首先在终端内打开  ~&#x2F;.bash_profile（Intel芯片），若没有该文件则使用touch命令新建一个</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657eltqbmj20zu04iq3y.jpg"></p>
+<p>切换成插入模式（:i）加入以下环境变量信息（jdk的版本号以实际下载的为准）</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ex5bykj216a04wq45.jpg"></p>
+<p>配置完成后保存文件（:wq），需要source .bash_profile 使文件生效</p>
+<p>在终端输入： echo $JAVA_HOME，查询到如下结果，就证明已经生效了</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657f86vtqj212m04gq47.jpg"></p>
+<p>最后在终端输入java和javac，出现以下界面，说明安装成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ftg54uj215a0qsq6b.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657g5xy7jj213i0i4djo.jpg"></p>
+<p>安装SDK，及配置环境变量</p>
+<p>这边是通过安装android studio 来下载SDK，步骤如下</p>
+<p>先进入官网，下载android studio</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657gn764tj21h90u0gqd.jpg"></p>
+<p>下载完成后，双击打开，开始安装</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657gv8cbqj217i0tejtr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ioijjvj214k0u043m.jpg"></p>
+<p>选择自己想要的版本，下载即可</p>
+<p>最后别忘了配置环境变量，同样在终端内打开  ~&#x2F;.bash_profile</p>
+<p>在文件中新增如下信息后，保存文件，退出，执行source .bash_profile 使文件生效</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657j1ihgej21q206gwfe.jpg"></p>
+<p>输入adb –version 验证sdk安装配置成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657jd805gj20wu05ot9x.jpg"></p>
+<p>接着可以安装一下python和Appium-Python-client（将Python与appium关联起来），配合pycharm使用，便于之后执行自动化脚本，这里就不细讲了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657jp7bnaj217o04e0ts.jpg"></p>
+<p>安装xcode</p>
+<p>直接在app store安装xcode</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657k8pqa4j20ia0f20u6.jpg"></p>
+<p>安装好xcode后需要打开Xcode–&gt;Preferences–&gt;Locations–&gt;Command Line Tools 选择版本号</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657kmypg9j219g0qyjtm.jpg"></p>
+<p>安装Appium桌面程序</p>
+<p>直接官网下载，<a target="_blank" rel="noopener" href="http://appium.io/%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%88%90%E5%90%8E%E6%89%93%E5%BC%80%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E5%8D%B3%E5%8F%AF">http://appium.io/，下载完成后打开进行安装即可</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ky12isj21ca0u0gq1.jpg"></p>
+<p>以上便是Mac搭建Appium的全部步骤，最后可以安装 appium-doctor进行下环境验证</p>
+<p>npm install appium-doctor -g（如果权限被限制，加上sudo）</p>
+<p>环境验证，在终端输入：appium-doctor</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657lgy7tuj21bk0jy7av.jpg"></p>
+<p>像上图这样全部提示“✅”就证明环境配置都正确了</p>
+<p>appium-doctor 查出问题&amp;解决方案</p>
+<p>提示Error running xcrun simctl</p>
+<p>解决方法： 安装Xcode并选择版本号</p>
+<p>提示ANDROID_HOME environment variable is NOT set！</p>
+<p>解决方法：安装android sdk，并且一定要配置环境变量，在保存退出配置文件后执行source .bash_profile 使文件生效</p>
+<p>提示JAVA_HOME environment variable is NOT set!</p>
+<p>解决方法：大概率还是环境变量配置出错或者未生效，按上述步骤正确配置下jdk的环境变量就好了</p>
+<p>五、使用Appium-Server-GUI实现自动化</p>
+<p>略</p>
+<p>总结</p>
+<p>本文主要分享了Appium环境的搭建以及使用界面元素查看工具Appium Inspector来定位元素，模拟我们在手机上定位、点击、输入、滑动等各种操作，并将每一步操作记录下来集合成代码，以便我们将其取出并复用，实现部分功能的自动化测试。Appium还有许多进阶的用法，欢迎感兴趣的小伙伴共同探讨，谢谢~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/09/17/Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo-博客增删改及使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
