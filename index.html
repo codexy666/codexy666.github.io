@@ -174,9 +174,123 @@
       
         <p>一、Appium是什么？</p>
 <p>Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，它是一个用Node.js编写的HTTP server，应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。</p>
-        
-          <a class="article-more-a" href="/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/#more">more >></a>
-        
+<p>二、Appium的特点</p>
+<p>1、支持多平台运行测试对象App（iOS、Android等）</p>
+<p>2、支持多种程序语言开发测试程序（基本上 Selenium 支持开发的语言appium都支持，如：pyhton、java、Ruby、js、php、C# 等）</p>
+<p>3、支持测试程序运行在多种平台上（包括：Windows、Linux、MacOS等）</p>
+<p>三、Appium的自动化原理</p>
+<p>Appium的自动化架构图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6585h2ldkj21qg0oswgb.jpg"></p>
+<p>图中Test script是测试程序，是测试逻辑的实现部分。Appium Server是一个 JavaScript 代码实现的程序，它是运行在 Node.js 里面的。被测试 app则运行在真实设备或者模拟器中。</p>
+<p>这个测试系统运行起来交互关系为：测试程序（Test scrip）告诉 Appium Server 要做什么操作。比如要去点击界面的一个元素（这步通过 http 请求发送命令给 Appium Server ），Appium Server 接收到测试程序的命令后，再发出命令给设备上运行的控制程序（这程序由Appium Server注入到设备里面运行），控制程序调用相应自动化库里面的方法去执行界面的控制。</p>
+<p>四、Appium环境搭建</p>
+<p>基本步骤:<br>1、安装Node.js<br>2、安装JDK，及配置环境变量<br>3、安装SDK，及配置环境变量<br>4、安装Xcode<br>5、安装Appium桌面程序</p>
+<p>安装Node.js</p>
+<p>直接官网下载<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
+<p>下载安装包安装，安装完成后,在终端中输入<strong>node -v</strong>,显示版本号则表示安装成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657bfiiytj20po04uaad.jpg"></p>
+<p>注：node也可以直接通过brew命令安装，过程中可能会缺少很多依赖包，将缺少的依赖包全部安装好就可顺利安装node了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657c53n2ej21oa0fo7ae.jpg"></p>
+<p>安装JDK，及配置环境变量</p>
+<p>直接官网下载<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/#java8">https://www.oracle.com/java/technologies/downloads/#java8</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657dq26etj21m60u00xr.jpg"></p>
+<p>这步点击下载时，会跳转到Oracle登录界面，若此前注册过账号就直接登录，未注册过则创建账户后再登录，就可以下载啦</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657e4xlgjj21gt0u0gpt.jpg"></p>
+<p>安装下载好的jdk，还需要进行环境变量配置</p>
+<p>Java安装在：</p>
+<p>&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines 这个目录下面（如果没有，可以通过cp 命令将jdk包复制到&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines目录）</p>
+<p>Java的主目录在：<br>&#x2F;Library&#x2F;Java&#x2F;JavaVirtualMachines&#x2F;jdk1.8.0_341.jdk&#x2F;Contents&#x2F;Home<br>我们需要配置Java的环境变量也是这个目录</p>
+<p>首先在终端内打开  ~&#x2F;.bash_profile（Intel芯片），若没有该文件则使用touch命令新建一个</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657eltqbmj20zu04iq3y.jpg"></p>
+<p>切换成插入模式（:i）加入以下环境变量信息（jdk的版本号以实际下载的为准）</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ex5bykj216a04wq45.jpg"></p>
+<p>配置完成后保存文件（:wq），需要source .bash_profile 使文件生效</p>
+<p>在终端输入： echo $JAVA_HOME，查询到如下结果，就证明已经生效了</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657f86vtqj212m04gq47.jpg"></p>
+<p>最后在终端输入java和javac，出现以下界面，说明安装成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ftg54uj215a0qsq6b.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657g5xy7jj213i0i4djo.jpg"></p>
+<p>安装SDK，及配置环境变量</p>
+<p>这边是通过安装android studio 来下载SDK，步骤如下</p>
+<p>先进入官网，下载android studio</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657gn764tj21h90u0gqd.jpg"></p>
+<p>下载完成后，双击打开，开始安装</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657gv8cbqj217i0tejtr.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ioijjvj214k0u043m.jpg"></p>
+<p>选择自己想要的版本，下载即可</p>
+<p>最后别忘了配置环境变量，同样在终端内打开  ~&#x2F;.bash_profile</p>
+<p>在文件中新增如下信息后，保存文件，退出，执行source .bash_profile 使文件生效</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657j1ihgej21q206gwfe.jpg"></p>
+<p>输入adb –version 验证sdk安装配置成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657jd805gj20wu05ot9x.jpg"></p>
+<p>接着可以安装一下python和Appium-Python-client（将Python与appium关联起来），配合pycharm使用，便于之后执行自动化脚本，这里就不细讲了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657jp7bnaj217o04e0ts.jpg"></p>
+<p>安装xcode</p>
+<p>直接在app store安装xcode</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657k8pqa4j20ia0f20u6.jpg"></p>
+<p>安装好xcode后需要打开Xcode–&gt;Preferences–&gt;Locations–&gt;Command Line Tools 选择版本号</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657kmypg9j219g0qyjtm.jpg"></p>
+<p>安装Appium桌面程序</p>
+<p>直接官网下载，<a target="_blank" rel="noopener" href="http://appium.io/%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%AE%8C%E6%88%90%E5%90%8E%E6%89%93%E5%BC%80%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E5%8D%B3%E5%8F%AF">http://appium.io/，下载完成后打开进行安装即可</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ky12isj21ca0u0gq1.jpg"></p>
+<p>以上便是Mac搭建Appium的全部步骤，最后可以安装 appium-doctor进行下环境验证</p>
+<p>npm install appium-doctor -g（如果权限被限制，加上sudo）</p>
+<p>环境验证，在终端输入：appium-doctor</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657lgy7tuj21bk0jy7av.jpg"></p>
+<p>像上图这样全部提示“✅”就证明环境配置都正确了</p>
+<p>appium-doctor 查出问题&amp;解决方案</p>
+<p>提示Error running xcrun simctl</p>
+<p>解决方法： 安装Xcode并选择版本号</p>
+<p>提示ANDROID_HOME environment variable is NOT set！</p>
+<p>解决方法：安装android sdk，并且一定要配置环境变量，在保存退出配置文件后执行source .bash_profile 使文件生效</p>
+<p>提示JAVA_HOME environment variable is NOT set!</p>
+<p>解决方法：大概率还是环境变量配置出错或者未生效，按上述步骤正确配置下jdk的环境变量就好了</p>
+<p>五、使用Appium-Server-GUI实现自动化</p>
+<p>打开Appium-Server-GUI，直接点击startServer</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657m2vt8kj20vg0u075r.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657nwjenoj21980ecq4l.jpg"></p>
+<p>点击图示符号，启动Appium的Inspector探测工具（由于我们上面安装的 appium 版本是 1.22.3 ，所以Appium Inspector需要另外安装，下载并安装Appium-inspector：<a target="_blank" rel="noopener" href="https://github.com/appium/appium-inspector/releases">https://github.com/appium/appium-inspector/releases</a>)</p>
+<p>连接真机（也可以使用模拟器）</p>
+<p>用 USB 先连接到电脑，一头连接手机，一头连接电脑<br>进入手机设置 –&gt; 更多设置 –&gt; 开发者选项<br>开启USB 调试<br>在终端输入 adb devices -l   查询结果如下则代表连接成功</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657ofw0zmj215804swff.jpg"></p>
+<p>配置appium-inspector并启动</p>
+<p>填写和Appium Server一致的 Remote Host,  Remote Port  </p>
+<p>同时因为 appium为1.22.x，appium-inspector为新版，需要在 appium-inspector 中的 Remote Path 中配置&#x2F;wd&#x2F;hub</p>
+<p>platformName：设备名称，一般为 “Android” 或者 “ios”<br>platformVersion：版本号，可以通过命令：adb shell getprop ro.build.version.release 获取<br>deviceName：如果是真机的话填写的是设备名称；用的是模拟器的话，填写的是IP端口号。可通过命令：adb devices -l 查看，model:后面跟的那个值就是 “deviceName” 要填写的名称<br>appPackge 与 appActivity为必填项，获取方式为：启动了app后通过命令 adb shell dumpsys activity | grep “mResume” 查看，以”&#x2F;“为界限，左边是appPackge，右边是appActivity</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657opgoctj20yq0js768.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qcvtqrj20ud0f1gn3.jpg"></p>
+<p>操作按钮简介</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657qxmt8cj207101tglf.jpg"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rgoh7mj203w01owe9.jpg"><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657rxmkpmj207f023web.jpg"></p>
+<p>依次为：<br>选择元素按钮，点击就可以选中监控页面上的需要操作的位置</p>
+<p>滑动坐标按钮，可以使用这个按钮来进行页面滑动操作</p>
+<p>点击坐标点按钮，点击就可以在监控页面中进行点击操作，还可以看到鼠标当前的位置坐标</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657shjh5pj20x40fh0v8.jpg"></p>
+<p>返回和刷新功能：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657st2trcj209802vdfq.jpg"></p>
+<p>脚本录制（重点）</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h657teuwvvj209e03fwee.jpg"></p>
+<p>例：在Appium inspector中完成配置后，点击启动会话，进入如下界面，点击小眼睛开启录制：</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657tu3ztdj20x80kp76n.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657u75lvfj20z40fvq55.jpg"></p>
+<p>点击1、2选择好操作位置后，点击位置3表示在选中的“请输入手机&#x2F;笔名”处做点击操作，再点击位置4即可输入手机号或者笔名</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657ufg20rj20e505fjrd.jpg"></p>
+<p>输入完点击send keys即可，同理输入密码、同意协议</p>
+<p>最后再选中登录按钮，点击“点击”按钮就完成了一次登录</p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657uq4r1vj20vq0gln00.jpg"></p>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657v9x0wqj20za0jytcd.jpg"></p>
+<p>图示完成了一次简单的录制，最后可以从Recorder中选择自己想要的语言（图示选择python），同时如果想要展示全部的代码，我们可以点击右侧的“显示&#x2F;隐藏样版代码”：<br><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1h657w4rsutj20pa07vdgc.jpg"></p>
+<p>录制的代码，可以保存成xxx.py文件，按需求适当调整后就可以执行了。</p>
+<p>如下为在APP端首页启动七猫作家助手app，切换账号密码登录方式并输入账号、密码完成登录的自动化代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"># This sample code uses the Appium python client v2</span><br><span class="line"># pip install Appium-Python-Client</span><br><span class="line"># Then you can paste this into a file and simply run with Python</span><br><span class="line"></span><br><span class="line">from appium import webdriver</span><br><span class="line">from appium.webdriver.common.appiumby import AppiumBy</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># For W3C actions</span><br><span class="line">from selenium.webdriver.common.action_chains import ActionChains</span><br><span class="line">from selenium.webdriver.common.actions import interaction</span><br><span class="line">from selenium.webdriver.common.actions.action_builder import ActionBuilder</span><br><span class="line">from selenium.webdriver.common.actions.pointer_input import PointerInput</span><br><span class="line"></span><br><span class="line">caps = &#123;&#125;</span><br><span class="line">caps[&quot;platformName&quot;] = &quot;Android&quot;</span><br><span class="line">caps[&quot;appium:platformVersion&quot;] = &quot;8.1.0&quot;</span><br><span class="line">caps[&quot;appium:deviceName&quot;] = &quot;OPPO_R11s&quot;</span><br><span class="line">caps[&quot;appium:appPackge&quot;] = &quot;com.qimao.writerassistant&quot;</span><br><span class="line">caps[&quot;appium:appActivity&quot;] = &quot;.MainActivity&quot;</span><br><span class="line">caps[&quot;appium:ensureWebviewsHavePages&quot;] = True</span><br><span class="line">caps[&quot;appium:nativeWebScreenshot&quot;] = True</span><br><span class="line">caps[&quot;appium:newCommandTimeout&quot;] = 3600</span><br><span class="line">caps[&quot;appium:connectHardwareKeyboard&quot;] = True</span><br><span class="line"></span><br><span class="line">driver = webdriver.Remote(&quot;http://0.0.0.0:4723/wd/hub&quot;, caps)</span><br><span class="line"></span><br><span class="line">el1 = driver.find_element(by=AppiumBy.XPATH, value=&quot;/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[20]&quot;)</span><br><span class="line">el1.click()</span><br><span class="line">time.sleep(10)</span><br><span class="line">el2 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=&quot;帐号密码登录&quot;)</span><br><span class="line">el2.click()</span><br><span class="line">el3 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.EditText[1]&quot;)</span><br><span class="line">el3.click()</span><br><span class="line">el3.send_keys(&quot;18251977135&quot;)</span><br><span class="line">el4 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.EditText[2]&quot;)</span><br><span class="line">el4.click()</span><br><span class="line">el4.send_keys(&quot;yjm112233&quot;)</span><br><span class="line">el5 = driver.find_element(by=AppiumBy.XPATH, value=&quot;//android.view.View[@content-desc=\&quot;帐号密码登录\&quot;]/android.widget.ImageView[3]&quot;)</span><br><span class="line">el5.click()</span><br><span class="line">el6 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value=&quot;登录&quot;)</span><br><span class="line">el6.click()</span><br><span class="line"></span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>遇到的问题及解决方式</p>
+<p>输入密码时提示：Could not obtain screenshot: unable to capture screen: Failed to capture a s</p>
+<p>解决方式：这是由于手机在输入密码时启用了安全键盘，此时app页面被禁止截屏导致的。在手机 “设置 - 键盘与输入法 - 输入密码时启动安全键盘” 处关闭按钮即可。</p>
+<p>执行自动化脚本时提示：An element could not be located on the page using the given search parameter</p>
+<p>解决方式：报错信息提示“使用给定的搜索参数无法在页面上找到元素”，这是由于实际app启动是需要一定的时间的，而代码在el1.click()执行之后立即执行driver.find_element，导致无法在页面找到元素，在el1.click()后加上time.sleep(10)即可解决（睡眠秒数可按实际情况调整）。</p>
+<p>总结</p>
+<p>本文主要分享了Appium环境的搭建以及使用界面元素查看工具Appium Inspector来定位元素，模拟我们在手机上定位、点击、输入、滑动等各种操作，并将每一步操作记录下来集合成代码，以便我们将其取出并复用，实现部分功能的自动化测试。Appium还有许多进阶的用法，欢迎感兴趣的小伙伴共同探讨，谢谢~</p>
+
       
 
       
@@ -239,13 +353,63 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>hexo的命令要在<code>E:\hexoBlog</code>下敲，子目录也可以</li>
-<li>hexo推送就是hexo建立的本地git分支推送到git远程分支，所以注意看github上的远程分支</li>
-<li>自己测试重新部署时不<code>hexo clean</code>直接<code>hexo g</code>再<code>hexo d</code>也可增删改</li>
+<li><p>hexo的命令要在<code>E:\hexoBlog</code>下敲，子目录也可以</p>
+</li>
+<li><p>hexo推送就是hexo建立的本地git分支推送到git远程分支，所以注意看github上的远程分支</p>
+</li>
+<li><p>自己测试重新部署时不<code>hexo clean</code>直接<code>hexo g</code>再<code>hexo d</code>也可增删改</p>
+</li>
+<li><p>标题显示的是抬头信息里的标题与文件名称无关，而时间显示的是第一次上传的文件，其文件夹是按上传时间分类的<code>E:\hexoBlog\.deploy_git\2022\09\16\hello-world无用修改</code></p>
+</li>
+<li><p>_post只支持md文件，其他文件如pdf，图片（文件服务器？）探索中</p>
+</li>
 </ul>
-        
-          <a class="article-more-a" href="/2022/09/17/hexo-%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8F%8A%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
+<hr>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul>
+<li><p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
+</li>
+<li><p>修改_config.yml中的theme为yilia</p>
+</li>
+<li><p>清理<code>hexo clean</code></p>
+</li>
+<li><p>生成<code>hexo g</code></p>
+</li>
+<li><p>本地启动（可忽略）<code>hexo s</code></p>
+</li>
+<li><p>推送到git<code>hexo d</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="新增一篇博客"><a href="#新增一篇博客" class="headerlink" title="新增一篇博客"></a>新增一篇博客</h2><ul>
+<li><code>hexo n &quot;文件名&quot;</code><ul>
+<li>不需要加.md</li>
+<li>可以去修改title，默认为文件名</li>
+</ul>
+</li>
+<li>在<code>E:\hexoBlog\source\_posts</code>中新建或拖入md文件<ul>
+<li>尽量和<code>hexo n</code>新建的md文件抬头信息保持一致（包含title, date, tags）</li>
+</ul>
+</li>
+<li>重新部署<ul>
+<li><code>hexo clean</code></li>
+<li><code>hexo g</code></li>
+<li><code>hexo d</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="删除一篇博客"><a href="#删除一篇博客" class="headerlink" title="删除一篇博客"></a>删除一篇博客</h2><ul>
+<li>直接删除<code>E:\hexoBlog\source\_posts</code>中的md文件</li>
+<li>重新部署</li>
+<li>如果git云端博客未删除，尝试删除<code>E:\hexoBlog\.deploy_git</code>文件夹</li>
+</ul>
+<hr>
+<p>修改一篇博客</p>
+<ul>
+<li>直接修改md文件</li>
+<li>重新部署</li>
+</ul>
+
       
 
       
@@ -372,9 +536,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/#more">more >></a>
-        
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
       
 
       
