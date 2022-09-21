@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>算法-二分查找-总结了算法小抄 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法-二分查找-总结了算法小抄">
+<meta property="og:url" content="http://example.com/2019/11/28/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E6%80%BB%E7%BB%93%E4%BA%86%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-11-28T08:53:08.000Z">
+<meta property="article:modified_time" content="2022-09-21T12:24:12.697Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,548 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-算法-循环求余和快速幂求余" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-算法-二分查找-总结了算法小抄" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%BE%AA%E7%8E%AF%E6%B1%82%E4%BD%99%E5%92%8C%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E4%BD%99/">算法-循环求余和快速幂求余</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%BE%AA%E7%8E%AF%E6%B1%82%E4%BD%99%E5%92%8C%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E4%BD%99/" class="archive-article-date">
-  	<time datetime="2022-09-21T12:23:47.167Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-21</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 求 (x^a) % p —— 循环求余法</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">remainder</span>(<span class="params">x, a, p</span>):</span><br><span class="line">    rem = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(a):</span><br><span class="line">        rem = (rem * x) % p</span><br><span class="line">    <span class="keyword">return</span> rem</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%BE%AA%E7%8E%AF%E6%B1%82%E4%BD%99%E5%92%8C%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E4%BD%99/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%BE%AA%E7%8E%AF%E6%B1%82%E4%BD%99%E5%92%8C%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E4%BD%99/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法-堆-优先队列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%A0%86-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">算法-堆-优先队列</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%A0%86-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/" class="archive-article-date">
-  	<time datetime="2022-09-21T12:22:51.874Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-21</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>见算法4 P.201和排序算法笔记中的堆排序<ul>
-<li>LeetCode-剑指 Offer 40. 最小的k个数</li>
-<li>LeetCode-215. 数组中的第K个最大元素</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 实现整数的最大堆</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MaxPQ</span> &#123;</span><br><span class="line">    <span class="comment">// 基于堆的完全二叉树</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] pq;</span><br><span class="line">    <span class="comment">// 0 没有使用</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">N</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MaxPQ</span><span class="params">(<span class="type">int</span> maxN)</span> &#123;</span><br><span class="line">        pq = <span class="keyword">new</span> <span class="title class_">int</span>[maxN + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> N == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">size</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> N;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 插入新元素 */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">insert</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        pq[++N] = x;</span><br><span class="line">        swim(N);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 删除最大值 */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">delMax</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> pq[<span class="number">1</span>];</span><br><span class="line">        swap(<span class="number">1</span>, N--);</span><br><span class="line">        sink(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 上浮方法 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">swim</span><span class="params">(<span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &gt; <span class="number">1</span> &amp;&amp; pq[k &gt;&gt; <span class="number">1</span>] &lt; pq[k]) &#123;</span><br><span class="line">            swap(k &gt;&gt; <span class="number">1</span>, k);</span><br><span class="line">            k &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 下沉方法 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">sink</span><span class="params">(<span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(k &lt;&lt; <span class="number">1</span> &lt;= N) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">2</span> * k;</span><br><span class="line">            <span class="comment">// 选择更大的子节点</span></span><br><span class="line">            <span class="keyword">if</span>(j &lt; N &amp;&amp; pq[j] &lt; pq[j + <span class="number">1</span>]) j++;</span><br><span class="line">            <span class="comment">// 下沉结束</span></span><br><span class="line">            <span class="keyword">if</span>(pq[k] &gt;= pq[j]) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 下沉</span></span><br><span class="line">            swap(k, j);</span><br><span class="line">            k = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** 交换方法 */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">        pq[i] = pq[i] ^ pq[j];</span><br><span class="line">        pq[j] = pq[i] ^ pq[j];</span><br><span class="line">        pq[i] = pq[i] ^ pq[j];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 测试</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">MaxPQ</span> <span class="variable">pq</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MaxPQ</span>(<span class="number">10</span>);</span><br><span class="line">        pq.insert(<span class="number">1</span>);</span><br><span class="line">        pq.insert(<span class="number">3</span>);</span><br><span class="line">        pq.insert(<span class="number">5</span>);</span><br><span class="line">        pq.insert(-<span class="number">1</span>);</span><br><span class="line">        pq.insert(<span class="number">10</span>);</span><br><span class="line">        pq.insert(-<span class="number">5</span>);</span><br><span class="line">        pq.insert(<span class="number">2</span>);</span><br><span class="line">        pq.insert(<span class="number">5</span>);</span><br><span class="line">        pq.insert(<span class="number">4</span>);</span><br><span class="line">        pq.insert(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!pq.isEmpty()) &#123;</span><br><span class="line">            System.out.print(pq.delMax() + <span class="string">&quot; &quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%A0%86-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法-常见位运算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%B8%B8%E8%A7%81%E4%BD%8D%E8%BF%90%E7%AE%97/">算法-常见位运算</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%B8%B8%E8%A7%81%E4%BD%8D%E8%BF%90%E7%AE%97/" class="archive-article-date">
-  	<time datetime="2022-09-21T12:22:51.871Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-21</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="位运算在JDK中很常用，运算更快但是更难理解"><a href="#位运算在JDK中很常用，运算更快但是更难理解" class="headerlink" title="位运算在JDK中很常用，运算更快但是更难理解"></a>位运算在JDK中很常用，运算更快但是更难理解</h3><ul>
-<li>LeetCode-136. 只出现一次的数字</li>
-<li>LeetCode-338. 比特位计数</li>
-<li>LeetCode-461. 汉明距离</li>
-</ul>
-        
-          <a class="article-more-a" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%B8%B8%E8%A7%81%E4%BD%8D%E8%BF%90%E7%AE%97/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/21/%E7%AE%97%E6%B3%95-%E5%B8%B8%E8%A7%81%E4%BD%8D%E8%BF%90%E7%AE%97/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Appium环境搭建及使用Appium-Server-GUI实现自动化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/">Appium环境搭建及使用Appium-Server-GUI实现自动化-新</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2022-09-17T06:10:34.380Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-17</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、Appium是什么？</p>
-<p>Appium是一个开源的，适用于原生或混合移动应用（ hybrid mobile apps ）的自动化测试工具，它是一个用Node.js编写的HTTP server，应用WebDriver: JSON wire protocol驱动安卓和iOS移动应用。</p>
-        
-          <a class="article-more-a" href="/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/17/Appium%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E5%8F%8A%E4%BD%BF%E7%94%A8Appium-Server-GUI%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo-博客增删改及使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/17/hexo-%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8F%8A%E4%BD%BF%E7%94%A8/">hexo-博客增删改及使用</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/17/hexo-%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2022-09-17T05:08:31.900Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-17</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>hexo的命令要在<code>E:\hexoBlog</code>下敲，子目录也可以</li>
-<li>hexo推送就是hexo建立的本地git分支推送到git远程分支，所以注意看github上的远程分支</li>
-<li>自己测试重新部署时不<code>hexo clean</code>直接<code>hexo g</code>再<code>hexo d</code>也可增删改</li>
-</ul>
-        
-          <a class="article-more-a" href="/2022/09/17/hexo-%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8F%8A%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/17/hexo-%E5%8D%9A%E5%AE%A2%E5%A2%9E%E5%88%A0%E6%94%B9%E5%8F%8A%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法-最大公因数gcd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/17/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B0gcd/">算法-最大公因数gcd</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/17/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B0gcd/" class="archive-article-date">
-  	<time datetime="2022-09-17T03:17:16.208Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-17</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b == <span class="number">0</span> ? a : gcd(b, a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/17/%E7%AE%97%E6%B3%95-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B0gcd/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world无用修改" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/">Hello World有用修改</a>
-    </h1>
-  
-
-        
-        <a href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/" class="archive-article-date">
-  	<time datetime="2022-09-16T10:50:09.486Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-16</time>
-</a>
-              <!-- 需要添加的位置 -->
-              <!-- 开始添加字数统计--> 
-              <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法-二分查找-总结了算法小抄" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/28/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E6%80%BB%E7%BB%93%E4%BA%86%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/">算法-二分查找-总结了算法小抄</a>
+    <h1 class="article-title" itemprop="name">
+      算法-二分查找-总结了算法小抄
     </h1>
   
 
@@ -735,6 +206,32 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -753,16 +250,79 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/28/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E6%80%BB%E7%BB%93%E4%BA%86%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/11/28/%E7%AE%97%E6%B3%95-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E6%80%BB%E7%BB%93%E4%BA%86%E7%AE%97%E6%B3%95%E5%B0%8F%E6%8A%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2022/09/16/hello-world%E6%97%A0%E7%94%A8%E4%BF%AE%E6%94%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World有用修改
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -782,8 +342,14 @@
 
 
 
+  
 
   
+
+  
+
+  
+
   
 
 
@@ -806,8 +372,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
