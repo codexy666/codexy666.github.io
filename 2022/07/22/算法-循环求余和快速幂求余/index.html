@@ -431,32 +431,34 @@
 
 
 
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '42eb0d77e16121b2985b',
-  	clientSecret: '401903c473060702e23d194d35078f1580ee416f',
-  	repo: 'hexo-gitalk',
-  	owner: 'codexy666',
-  	admin: ['codexy666'],
-  	id: 'Fri Jul 22 2022 09:08:13 GMT+0800',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
 
 
 
 
 
+  
+  <div id="gitment-ctn"></div>
+  
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "算法-循环求余和快速幂求余" -->
+    var gitment = new Gitment({
+      id: "20220722090813",
+      owner: 'true',
+      repo: 'codexy666.github.io',
+      oauth: {
+        client_id: '42eb0d77e16121b2985b',
+        client_secret: '401903c473060702e23d194d35078f1580ee416f',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
 
 
+  
 
 
 
@@ -578,11 +580,7 @@ gitalk.render('gitalk-container')
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Appium</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,11 +588,15 @@ gitalk.render('gitalk-container')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Appium</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
             
             <div class="clearfix"></div>
